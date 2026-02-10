@@ -475,12 +475,12 @@ Reusable workflows:
 
 ## Getting Started Checklist
 
-- [ ] Run `ad foundation setup` command
+- [ ] Run `ad-foundation-setup` command
 - [ ] Review foundation docs with team
 - [ ] Agree on patterns
-- [ ] Try `ad feature implementation` on a small feature
-- [ ] Use `ad generate tests` to create tests
-- [ ] Use `ad pattern review` to validate
+- [ ] Try `ad-feature-implementation` on a small feature
+- [ ] Use `ad-generate-tests` to create tests
+- [ ] Use `ad-pattern-review` to validate
 - [ ] Read this guide for best practices
 
 ---
