@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+- All documentation is placed in `docs/` (subfolders: `ai-pod/`, `dfg/`, `tasks/`, root-level for Phase 1E).
+- Tasks: `docs/tasks/Phase-[N]/[TASK-KEY]/[TASK-KEY].md`
+- **Subtasks: STRICT ONE-FILE RULE**
+  - Each subtask MUST have exactly ONE file: `Subtasks/[SUBTASK-KEY].md`
+  - NEVER create separate files like `[SUBTASK-KEY]-VALIDATION.md`, `[SUBTASK-KEY]-TESTING.md`, `[SUBTASK-KEY]-GUIDE.md`, etc.
+  - ALL content (requirements, validation, testing, notes, guides, etc.) MUST be merged into the single subtask file
+  - If user requests separate files, explain this rule and ask for confirmation to override
+- Use templates: `SUBTASK-TEMPLATE.md`
+- Plans: `docs/dfg/plans/Phase-[X]-[Description].md`
+- Validation: `docs/dfg/validation/[description]-validation.md`
+- Confluence: `docs/dfg/confluence/[SPACE]/[FOLDER]/[FILE].md`
+- Root-level docs: `docs/ARCHITECTURE.md`, `docs/API_ENDPOINTS.md`, etc.
+- Required: `docs/tasks/README.md`, `docs/dfg/README.md`
+- Every doc must list GitHub, JIRA, and Confluence links
+- When updating docs, sync across GitHub, JIRA and Confluence
+- Only suggest new docs if requested; otherwise, reference current structure

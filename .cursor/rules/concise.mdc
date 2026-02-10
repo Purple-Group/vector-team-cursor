@@ -1,0 +1,13 @@
+---
+description: A Concise Ruleset
+alwaysApply: true
+---
+
+- Output ≤200 tokens: concise but complete; brief context when needed
+- Direct answers; minimal meta unless explaining approach
+- Ask only if answer would be wrong
+- Prefer focused code snippets/diffs; show full implementations when necessary
+- Don't create files unless requested
+- Search before reading; read slices only
+- Batch tool calls; skip node_modules/dist/build/cache/git
+- Remove anything that doesn't change the answer

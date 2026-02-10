@@ -1,0 +1,86 @@
+---
+alwaysApply: true
+---
+# Accelerated Delivery Framework Rules
+
+## Foundation-First Principle
+
+- Always review patterns/docs before implementation
+- Check for DESIGN_PATTERNS.md, PROJECT_STRUCTURE.md, ARCHITECTURE.md before major work
+- If foundation docs are missing, prompt user to set up foundation first using `ad-foundation-setup` command
+- Validate project structure matches architecture
+
+## Context → Plan → Execute Workflow
+
+Every feature implementation MUST follow this workflow:
+
+1. **Context Gathering**: Read DESIGN_PATTERNS.md, PROJECT_STRUCTURE.md, review similar features
+2. **Planning**: Identify layers, files, pattern alignment, implementation steps
+3. **Implementation**: Follow the plan
+4. **Testing**: Generate tests per testing pyramid (60% unit, 30% integration, 10% E2E)
+5. **Verification**: Check pattern compliance, test results, linting
+6. **Documentation**: Update relevant docs (README, ARCHITECTURE, API docs)
+
+## Pattern Adherence
+
+- Code must match DESIGN_PATTERNS.md
+- File locations must match PROJECT_STRUCTURE.md
+- Dependencies must be injected correctly
+- DTOs must be used for API boundaries
+- Repository pattern must be followed for data access
+- Service layer must encapsulate business logic
+
+## Testing Requirements
+
+- Features MUST include tests at appropriate pyramid level
+- Unit tests: Service layer, business logic, calculations
+- Integration tests: API endpoints with real database
+- E2E tests: Critical user journeys
+- All tests must pass before completion
+- Reference TEST_AUTOMATION_STRATEGY.md for testing approach
+
+## Documentation Requirements
+
+- Code + Tests + Docs = Done
+- Every feature must update relevant documentation:
+  - README.md if setup/usage changes
+  - ARCHITECTURE.md if system design changes
+  - API documentation (Swagger comments)
+  - PROJECT_STRUCTURE.md if new files/folders
+  - Create feature summary doc if complex feature
+
+## Pitfall Prevention
+
+Before completing any task, check for these common pitfalls:
+
+1. **Skipping Foundation**: Ensure foundation docs exist and are reviewed
+2. **No Context**: Ensure Context → Plan → Execute workflow is followed
+3. **Blind Acceptance**: Validate AI output against patterns before accepting
+4. **No Testing Strategy**: Ensure tests are generated per TEST_AUTOMATION_STRATEGY.md
+5. **Paralysis by Analysis**: Apply "Immediate Call" rule (15 min stuck → decide)
+6. **Documentation Debt**: Ensure documentation is updated with every feature
+7. **Not Reviewing AI Code**: Review for security, performance, correctness
+
+## Team Collaboration
+
+- Remind about async-first communication
+- Suggest time-boxed sessions (2-hour focused sessions)
+- Apply decision frameworks (Type 1 vs Type 2 decisions)
+- Encourage documentation of decisions and rationale
+- Promote knowledge sharing and daily summaries
+
+## Decision-Making Framework
+
+- **Type 1 decisions** (reversible): Make immediately, document, move forward
+- **Type 2 decisions** (hard to reverse): Create ADR document, async review, 24-hour feedback window, decide
+- Apply "Immediate Call" rule: If stuck > 15 minutes, make a decision and move forward
+
+## Quality Gates
+
+Before marking any task as complete, verify:
+- [ ] Files in correct locations per PROJECT_STRUCTURE.md
+- [ ] Patterns match DESIGN_PATTERNS.md
+- [ ] All tests pass
+- [ ] No linter errors
+- [ ] Documentation updated
+- [ ] Code reviewed for security, performance, correctness

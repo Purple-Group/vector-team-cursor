@@ -1,0 +1,26 @@
+---
+description: Configuration for AI behavior when interacting with Codacy's MCP Server
+alwaysApply: false
+---
+# Codacy Rules
+
+## CRITICAL: After file edits
+- IMMEDIATELY run `codacy_cli_analyze` for each edited file: `rootPath`=workspace path, `file`=edited file path, `tool`=empty
+- Propose and apply fixes for any issues found
+- Verify analysis ran after every response with file edits
+
+## Security checks
+- After npm/yarn/pnpm install or adding dependencies (package.json, requirements.txt, pom.xml, build.gradle):
+  - Run `codacy_cli_analyze` with `tool`="trivy", `file`=empty
+  - Stop operations if vulnerabilities found; fix before continuing
+
+## Error handling
+- CLI not installed: Ask user to install via `codacy_cli_install` tool
+- MCP unavailable: Suggest resetting MCP or checking GitHub Copilot MCP settings (https://github.com/settings/copilot/features)
+- 404 on repository/org: Offer `codacy_setup_repository`, retry once after setup
+
+## General
+- Use standard file system paths (non-URL-encoded) for `rootPath`
+- Don't analyze for code coverage, complexity metrics, or duplicated code changes
+- Only send provider/org/repo if project is a git repository
+- Never manually install CLI (brew/npm/npx); use MCP tools only
